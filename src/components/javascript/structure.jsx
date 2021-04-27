@@ -7,7 +7,7 @@ import db from './firebase.config'
 export default function Structure() {
 
     const [Text, setText] = useState('')
-    const [Name, setName] = useState('omabiu')
+    const [Name, setName] = useState('user')
     const [List, setList] = useState([])
 
     const getData = async()=>{
