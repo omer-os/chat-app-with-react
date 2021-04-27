@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-export default function Msg() {
+export default function Msg({name, text}) {
     return (
         <div className='msg'>
             
-            <div className="name">omar chatin : </div>
-            <div className="text">lodddddddd</div>
+            <div className="name">{name} : </div>
+            <div className="text">{text}</div>
         </div>
     );
 }

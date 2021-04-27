@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import structure from '../styles/structure.css'
 import Msg from "./Msg"
 import db from './firebase.config'
 
+
 export default function Structure() {
 
     const [Text, setText] = useState('')
+    const [Name, setName] = useState('omabiu')
+    const [List, setList] = useState([])
 
     const getData = async()=>{
         const res = db.ref('chat')
@@ -15,14 +18,35 @@ export default function Structure() {
           for (let  id in u){
             usersList.push(u[id])
           }
-          console.log(usersList);
+          setList(...List, usersList)
       })
-
-
     }
+
+    
     useEffect(()=>{
         getData()
+        const nm = prompt('ENTER YOUR NAME : ')
+        setName(nm)
     },[])
+
+    const sendData = ()=>{
+        const res = db.ref('chat')
+        const msg = {
+            name:Name,
+            text:Text
+        }
+        res.push(msg)
+    }
+
+
+    const inputTextHandeler = (e)=>{
+        setText(e.target.value)
+    }
+    const submitBtnHandeler = (e)=>{
+        e.preventDefault();
+        sendData()
+        setText('')
+    }
 
     return (
         <div className='structure'>
@@ -32,13 +56,18 @@ export default function Structure() {
                     <p className='navText'>awesome room</p>
                 </nav>
 
+                
                 <div className="messegeingSection">
-                    <Msg />
-                    <Msg />
+                    <div className='messeges'>
+                        {List.map(i=>{
+                            return <Msg name={i.name} text={i.text} />
+                        })}
+                    </div>
                 </div>
+                
                 <div className="inputSection">
-                    <input type="text" className="inputText" onChange={inputTextHandeler}/>
-                    <button className="sendBtn">send</button>
+                    <input type="text" className="inputText" onChange={inputTextHandeler} value={Text}/>
+                    <button className="sendBtn" onClick={submitBtnHandeler}>send</button>
                 </div>
             </div>
         </div>

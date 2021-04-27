@@ -6,9 +6,6 @@
     --gray: #C4C4C4;
 }
 
-
-
-
 body{
     background-color: var(--body-background-color);
     color: white;
@@ -19,6 +16,10 @@ body{
 .elementsInCenter{
     margin: auto;
     max-width: 50%;
+}
+.messeges{
+    overflow-y: scroll;
+    width: 100%;
 }
 
 nav{
@@ -55,8 +56,6 @@ nav{
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    overflow: hidden;
-
 }
 
 .inputSection{
