@@ -1,0 +1,99 @@
+:root{
+    --body-background-color: #140633;
+    --div-borders: 3px solid #4F5894;
+    --messeges-background-color: #4F5894;
+    --messege-name-font-size: 25px;
+    --gray: #C4C4C4;
+}
+
+
+
+
+body{
+    background-color: var(--body-background-color);
+    color: white;
+    font-family: sans-serif;
+    margin: 10px;
+}
+
+.elementsInCenter{
+    margin: auto;
+    max-width: 50%;
+}
+
+nav{
+    border: var(--div-borders);
+    background-color: var(--body-background-color);
+    position: sticky;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 6px;
+}
+
+.navImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--gray);
+}
+.navText{
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+
+.messegeingSection{
+    border: var(--div-borders);
+    position: absolute;
+    top: 16%;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 48.5%;
+    bottom: 55px;
+}
+
+.inputSection{
+    position: absolute;
+    bottom: 10px;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 49%;
+    max-height: fit-content;
+    margin-top: 5px;
+    background-color: violet;
+}
+.text{
+    background-color: white;
+    border: var(--div-borders);
+    font-size: 4.5vh;
+    outline: none;
+    width: 75%;
+    margin: 5px;
+    border-radius: 5px;
+}.sendBtn{
+    width: 20%;
+    font-size: 1.5em;
+    background-color: var(--messeges-background-color);
+    border: var(--div-borders);
+    border-radius: 5px;
+}
+
+
+
+@media (max-width: 800px){
+    .elementsInCenter{
+        max-width: 100%;
+    }
+    .messegeingSection{
+        width: 95.5%;
+    }
+    .inputSection{
+        width: 95.5%;
+    }
+    .text{
+        width: 70%;
+        font-size: 1.5em;
+    }.sendBtn{
+        font-size: 1.4em;
+    }
+}
