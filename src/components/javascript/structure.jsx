@@ -26,7 +26,9 @@ export default function Structure() {
     useEffect(()=>{
         getData()
         const nm = prompt('ENTER YOUR NAME : ')
-        setName(nm)
+        if (nm){
+            setName(nm)
+        }
     },[])
 
     const sendData = ()=>{
