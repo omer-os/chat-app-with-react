@@ -25,10 +25,10 @@ export default function Structure() {
     
     useEffect(()=>{
         getData()
-        const nm = prompt('ENTER YOUR NAME : ')
-        if (nm){
-            setName(nm)
-        }
+        // const nm = prompt('ENTER YOUR NAME : ')
+        // if (nm){
+        //     setName(nm)
+        // }
     },[])
 
     const sendData = ()=>{
@@ -37,7 +37,9 @@ export default function Structure() {
             name:Name,
             text:Text
         }
-        res.push(msg)
+        if(!msg.text==''){
+            res.push(msg)
+        }
     }
 
 
