@@ -25,10 +25,10 @@ export default function Structure() {
     
     useEffect(()=>{
         getData()
-        // const nm = prompt('ENTER YOUR NAME : ')
-        // if (nm){
-        //     setName(nm)
-        // }
+        const nm = prompt('ENTER YOUR NAME : ')
+        if (nm){
+            setName(nm)
+        }
         
     },[])
 
