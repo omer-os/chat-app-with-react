@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import structure from '../styles/structure.css'
 import Msg from "./Msg"
 import db from './firebase.config'
-
+ 
 
 export default function Structure() {
 
@@ -29,6 +29,7 @@ export default function Structure() {
         // if (nm){
         //     setName(nm)
         // }
+        
     },[])
 
     const sendData = ()=>{
@@ -51,6 +52,7 @@ export default function Structure() {
         sendData()
         setText('')
     }
+
 
     return (
         <div className='structure'>
