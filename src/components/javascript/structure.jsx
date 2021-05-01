@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import structure from '../styles/structure.css'
 import Msg from "./Msg"
 import db from './firebase.config'
- 
+import firebase from 'firebase/app'
 
 export default function Structure() {
 
@@ -13,25 +13,33 @@ export default function Structure() {
     const getData = async()=>{
         const res = db.ref('chat')
         res.on('value',(snapshot)=>{
-          const u = snapshot.val()
-          const usersList =[]
-          for (let  id in u){
-            usersList.push(u[id])
-          }
-          setList(...List, usersList)
-      })
+            const u = snapshot.val()
+            const usersList =[]
+            for (let  id in u){
+                usersList.push(u[id])
+            }
+            setList(...List, usersList)
+        })
     }
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     useEffect(()=>{
         getData()
         const nm = prompt('ENTER YOUR NAME : ')
         if (nm){
             setName(nm)
-        }
-        
-    },[])
+        }        
 
+    },[])
+    
     const sendData = ()=>{
         const res = db.ref('chat')
         const msg = {
